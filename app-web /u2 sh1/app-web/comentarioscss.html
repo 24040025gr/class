@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Comentarios</title>
+    <link rel="stylesheet" href="styles/com.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Deja tu comentario</h1>
+        <form id="commentForm">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" placeholder="Tu nombre" required />
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
+
+            <label for="comment">Comentario:</label>
+            <textarea id="comment" name="comment" placeholder="Escribe tu comentario aquí..." required></textarea>
+
+            <button type="submit">Enviar comentario</button>
+        </form>
+        <div class="success-message" id="successMessage">
+            ¡Gracias por tu comentario!
+        </div>
+    </div>
+
+    <script>
+        // Mostrar mensaje de éxito al enviar el formulario
+        const form = document.getElementById('commentForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Aquí podrías agregar lógica para enviar el comentario a un servidor
+
+            // Mostrar mensaje de éxito
+            successMessage.style.display = 'block';
+
+            // Limpiar formulario
+            form.reset();
+
+            // Ocultar mensaje después de 4 segundos
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 4000);
+        });
+    </script>
+</body>
+</html>
