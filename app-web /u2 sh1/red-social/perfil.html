@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Raulito - falsobook</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+    
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">falsobook</div>
+            <nav class="nav-links">
+                <a href="http://127.0.0.1:5500/index.html">Inicio</a>
+                <a href="#">Explorar</a>
+                <a href="http://127.0.0.1:5500/mensajes.html">Mensajes</a>
+                <a href="#">Mi Perfil</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Header del Perfil de Raulito -->
+    <div class="profile-header">
+        <div class="profile-avatar">R</div>
+        <h1 class="profile-name">Raulito</h1>
+        <p class="profile-username">@raulito_ok</p>
+        
+        <div class="profile-stats">
+            <div class="stat">
+                <div class="stat-number">156</div>
+                <div class="stat-label">Publicaciones</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">1.2K</div>
+                <div class="stat-label">Seguidores</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">345</div>
+                <div class="stat-label">Seguidos</div>
+            </div>
+        </div>
+        
+        <button class="follow-btn" onclick="toggleFollow(this)">Seguir</button>
+    </div>
+
+    <!-- Publicaciones de Raulito -->
+    <main>
+        <!-- Publicación 1 -->
+        <div class="post">
+            <div class="post-header">
+                <div class="user-avatar">R</div>
+                <div class="user-info">
+                    <h3>Raulito</h3>
+                    <p>Hace 3 horas</p>
+                </div>
+            </div>
+            <div class="post-text">foto para fans</div>
+                <img src="images/raulito.jpeg" alt="">
+            </div>
+            <div class="post-stats">
+                <span id="likes1">89 me gusta</span> | <span id="comments1">12 comentarios</span>
+            </div>
+            <div class="post-actions">
+                <button class="action-btn" onclick="toggleLike('likes1', this)">Me gusta</button>
+                <button class="action-btn" onclick="focusComment('input1')">Comentar</button>
+            </div>
+        </div>
+
+        <!-- Publicación 2 -->
+        <div class="post">
+            <div class="post-header">
+                <div class="user-avatar">R</div>
+                <div class="user-info">
+                    <h3>Raulito</h3>
+                    <p>Ayer</p>
+                </div>
+            </div>
+            <div class="post-text">en el bañoo</div>
+            <img src="images/baño.jpeg" alt="">
+            <img src="images/baño2.jpeg" alt="">
+            <div class="post-stats">
+                <span id="likes2">156 me gusta</span> | <span id="comments2">23 comentarios</span>
+            </div>
+            <div class="post-actions">
+                <button class="action-btn" onclick="toggleLike('likes2', this)">Me gusta</button>
+                <button class="action-btn" onclick="focusComment('input2')">Comentar</button>
+            </div>
+        </div>
+
+        <!-- Publicación 3 -->
+        <div class="post">
+            <div class="post-header">
+                <div class="user-avatar">R</div>
+                <div class="user-info">
+                    <h3>Raulito</h3>
+                    <p>Hace 2 días</p>
+                </div>
+            </div>
+            <div class="post-text">proseso trans</div>
+            <img src="images/trans.jpeg" alt="">
+            <div class="post-stats">
+                <span id="likes3">1mill me gusta</span> | <span id="comments3">8 comentarios</span>
+            </div>
+            <div class="post-actions">
+                <button class="action-btn" onclick="toggleLike('likes3', this)">Me gusta</button>
+                <button class="action-btn" onclick="focusComment('input3')">Comentar</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleFollow(button) {
+            if (button.textContent === 'Seguir') {
+                button.textContent = 'Siguiendo';
+                button.classList.add('following');
+            } else {
+                button.textContent = 'Seguir';
+                button.classList.remove('following');
+            }
+        }
+
+        function toggleLike(likesId, button) {
+            const likesSpan = document.getElementById(likesId);
+            let likes = parseInt(likesSpan.textContent.split(' ')[0]);
+            
+            if (button.textContent === 'Me gusta') {
+                likes++;
+                button.textContent = 'Ya no me gusta';
+                button.style.background = '#e3f2fd';
+            } else {
+                likes--;
+                button.textContent = 'Me gusta';
+                button.style.background = 'none';
+            }
+            
+            likesSpan.textContent = likes + ' me gusta';
+        }
+
+        function focusComment(inputId) {
+            document.getElementById(inputId)?.focus();
+        }
+    </script>
+</body>
+</html>

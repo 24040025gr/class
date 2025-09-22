@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>falsobook</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">falsobook</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar en SocialConnect">
+            </div>
+            <nav class="nav-links">
+                <a href="#">Inicio</a>
+                <a href="#">Explorar</a>
+                <a href="http://127.0.0.1:5500/mensajes.html">Mensajes</a>
+                <a href="#">Perfil</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <main class="feed">
+            <!-- Publicación 1 -->
+            <article class="post">
+                <div class="post-header">
+                    <div class="user-avatar">MJ</div>
+                    <div class="user-info">
+                        <h3>tu</h3>
+                        <p>Hace 2 horas</p>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p class="post-text">selfie por los fans</p>
+                    <img src="images/selfie.jpeg" alt="" class="post-image">
+                </div>
+                <div class="post-stats">
+                    <span>125 me gusta</span>
+                    <span>23 comentarios</span>
+                </div>
+                <div class="post-actions">
+                    <button class="action-btn" onclick="toggleLike(this)">Me gusta</button>
+                    <button class="action-btn" onclick="focusComment(this)">Comentar</button>
+                    <button class="action-btn">Compartir</button>
+                </div>
+                <div class="comment-section">
+                    <div class="comment">
+                        <strong>Carlos:</strong> ¡Se ve precioso!
+                    </div>
+                    <div class="comment">
+                        <strong>Laura:</strong> Me encanta 💚
+                    </div>
+                    <div class="comment-input">
+                        <input type="text" placeholder="Escribe un comentario...">
+                        <button class="action-btn" onclick="addComment(this)">Publicar</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Publicación 2 -->
+            <article class="post">
+                <div class="post-header">
+                    <div class="user-avatar">AR</div>
+                    <div class="user-info">
+                        <a href="http://127.0.0.1:5500/perfil.html">
+                        <h3>raulitooo</h3>
+                        </a>
+                        <p>Hace 5 horas</p>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p class="post-text">siguemeee :)</p>
+                    <img src="images/raulito.jpeg" alt="">
+                </div>
+                <div class="post-stats">
+                    <span>89 me gusta</span>
+                    <span>15 comentarios</span>
+                </div>
+                <div class="post-actions">
+                    <button class="action-btn" onclick="toggleLike(this)">Me gusta</button>
+                    <button class="action-btn" onclick="focusComment(this)">Comentar</button>
+                    <button class="action-btn">Compartir</button>
+                </div>
+                <div class="comment-section">
+                    <div class="comment">
+                        <strong>Ana:</strong> ¡Felicidades! ¿Dónde la puedo descargar?
+                    </div>
+                    <div class="comment-input">
+                        <input type="text" placeholder="Escribe un comentario...">
+                        <button class="action-btn" onclick="addComment(this)">Publicar</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Publicación 3 -->
+            <article class="post">
+                <div class="post-header">
+                    <div class="user-avatar">LS</div>
+                    <div class="user-info">
+                        <h3>anncios</h3>
+                        <p>Ayer a las 18:30</p>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p class="post-text">animate a invertir</p>
+                <img src="images/cripto.jfif" alt="">    
+                </div>
+                <div class="post-stats">
+                    <span>215 me gusta</span>
+                    <span>34 comentarios</span>
+                </div>
+                <div class="post-actions">
+                    <button class="action-btn" onclick="toggleLike(this)">Me gusta</button>
+                    <button class="action-btn" onclick="focusComment(this)">Comentar</button>
+                    <button class="action-btn">Compartir</button>
+                </div>
+                <div class="comment-section">
+                    <div class="comment">
+                        <strong>Pedro:</strong> ¡Se ve increíble! 
+                    </div>
+                    <div class="comment">
+                        <strong>María:</strong> Yo también quiero intentar  💕
+                    </div>
+                    <div class="comment-input">
+                        <input type="text" placeholder="Escribe un comentario...">
+                        <button class="action-btn" onclick="addComment(this)">Publicar</button>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <aside class="sidebar">
+            <div class="sidebar-box">
+                <h2>Tu Perfil</h2>
+                <div class="friend-suggestion">
+                    <div class="user-avatar" style="background-color: #1877f2; color: white;">TÚ</div>
+                    <div class="friend-info">
+                        <h4>Tú Nombre</h4>
+                        <p>@tunombre</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-box">
+                <h2>Amigos Sugeridos</h2>
+                <div class="friend-suggestion">
+                    <div class="friend-avatar">CR</div>
+                    <div class="friend-info">
+                        <h4>Carlos Rodríguez</h4>
+                        <p>15 amigos en común</p>
+                    </div>
+                    <button class="add-friend-btn">Agregar</button>
+                </div>
+                <div class="friend-suggestion">
+                    <div class="friend-avatar">AG</div>
+                    <div class="friend-info">
+                        <h4>Ana García</h4>
+                        <p>8 amigos en común</p>
+                    </div>
+                    <button class="add-friend-btn">Agregar</button>
+                </div>
+                <div class="friend-suggestion">
+                    <div class="friend-avatar">MP</div>
+                    <div class="friend-info">
+                        <h4>Miguel Pérez</h4>
+                        <p>22 amigos en común</p>
+                    </div>
+                    <button class="add-friend-btn">Agregar</button>
+                </div>
+            </div>
+
+            <div class="sidebar-box">
+                <h2>Trending Topics</h2>
+                <p>#tecnología</p>
+                <p>#viajes</p>
+                <p>#música</p>
+                <p>#deportes</p>
+                <p>#cocina</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Información</a>
+            <a href="#">Ayuda</a>
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+            <a href="#">Configuración</a>
+        </div>
+        <div class="copyright">
+            © 2024 SocialConnect
+        </div>
+    </footer>
+
+    <script>
+        function toggleLike(button) {
+            const post = button.closest('.post');
+            const stats = post.querySelector('.post-stats span:first-child');
+            let likes = parseInt(stats.textContent.split(' ')[0]);
+            
+            if (button.textContent === 'Me gusta') {
+                likes++;
+                button.textContent = 'No me gusta';
+                button.style.color = '#1877f2';
+            } else {
+                likes--;
+                button.textContent = 'Me gusta';
+                button.style.color = '#65676b';
+            }
+            
+            stats.textContent = likes + ' me gusta';
+        }
+        
+        function focusComment(button) {
+            const commentSection = button.closest('.post').querySelector('.comment-section');
+            const input = commentSection.querySelector('input');
+            input.focus();
+        }
+        
+        function addComment(button) {
+            const input = button.previousElementSibling;
+            const commentText = input.value.trim();
+            
+            if (commentText) {
+                const commentSection = button.closest('.comment-section');
+                const newComment = document.createElement('div');
+                newComment.className = 'comment';
+                newComment.innerHTML = `<strong>Tú:</strong> ${commentText}`;
+                
+                commentSection.insertBefore(newComment, button.parentElement);
+                input.value = '';
+                
+                // Actualizar contador de comentarios
+                const post = button.closest('.post');
+                const stats = post.querySelector('.post-stats span:last-child');
+                let comments = parseInt(stats.textContent.split(' ')[0]);
+                comments++;
+                stats.textContent = comments + ' comentarios';
+            }
+        }
+        
+        // Funcionalidad para botones de agregar amigos
+        document.querySelectorAll('.add-friend-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.textContent === 'Agregar') {
+                    this.textContent = 'Solicitado';
+                    this.style.backgroundColor = '#e4e6eb';
+                    this.style.color = '#65676b';
+                } else {
+                    this.textContent = 'Agregar';
+                    this.style.backgroundColor = '#e7f3ff';
+                    this.style.color = '#1877f2';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
